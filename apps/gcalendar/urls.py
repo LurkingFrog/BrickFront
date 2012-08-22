@@ -1,7 +1,6 @@
 from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns(
-    'views',
-    url(r'^$', 'display'),
-    url(r'^admin/', 'admin')
+    'gcalendar.views',
+    url(r'^(?P<slug>\w+)/?(?P<html>(html)?)$', 'embed_calendar_html'),
 )

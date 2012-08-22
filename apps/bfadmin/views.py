@@ -6,7 +6,7 @@ def welcome(request):
     """
     This is the entry page
     """
-    template = 'base.html'
+    template = 'bfadmin/bodies.html'
     context = dict()
 
     return render(request, template, context)
