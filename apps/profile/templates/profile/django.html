@@ -1,0 +1,45 @@
+   <form method="post" id="django_login_form"
+	 action="{% url profile.views.user_login %}">
+     {% csrf_token %}
+
+     {{ form.auth_method }}
+     <table border="0" cellpadding="2" cellspacing="2">
+	<tbody>
+	  <tr>
+	    <td>
+	      <div align="right">
+		<strong>{{ form.username.label_tag }}</strong>
+	      </div>
+	    </td>
+	    <td>
+	      {{ form.username }}
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+	      <div align="right">
+		<strong>{{ form.password.label_tag }}</strong>
+	      </div>
+	    </td>
+	    <td>
+	      {{ form.password }}
+	    </td>
+	  </tr>
+	{% if form.errors %}
+	  <tr>
+	    <td colspan="2" class="error">
+	      {{ form.errors }}
+	    </td>
+	  </tr>
+	{% endif %}
+	  <tr>
+	    <td>&nbsp;</td>
+	    <td>
+	      <div align="center">
+		<input type="submit" value="Submit" />
+	      </div>
+	    </td>
+	  </tr>
+	</tbody>
+      </table>
+    </form>

@@ -7,7 +7,10 @@ def welcome(request):
     This is the entry page
     """
     template = 'bfadmin/bodies.html'
-    context = dict()
+    context = {
+        'breadcrumbs': ['Welcome', ]
+    }
 
     return render(request, template, context)
+
 

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{{STATIC_URL}}profile/css/layout.css" 
+	  type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{STATIC_URL}}profile/css/zocial.css" 
+	  type="text/css" media="screen" />
+{% endblock %}
+
+
+{% block javascript %}
+    {{ block.super }}
+    <script type="text/javascript"
+	  src="{{STATIC_URL}}profile/js/login.js">
+    </script>
+{% endblock %}
+
+
+{% block main_body %}
+<article id="login_article" class="module width_full">
+  <header class="login_header">
+    <h2 align="center">
+      Welcome to Adventureland's Administration Page<br />
+    </h2>
+  </header>
+  
+  <section id="login_forms" class="center login_forms">
+    <ul class="login_tabs">
+      <li class="login_tab">Login With:</li>
+      <li class="login_tab zocial guest">Adventureland</li>
+      <li class="login_tab zocial facebook">Facebook</li>
+      <li class="login_tab zocial googleplus">Google+</li>
+    </ul>
+    <fieldset id="login_fieldset" class="login_fieldset">
+      <legend>Sign-in form</legend>
+      <div id="login_div_adventureland" class="login_form">
+	{% include "profile/django.html" %}
+      </div>
+    </fieldset>
+  </section>
+</article>
+
+{% endblock %}
